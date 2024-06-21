@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "AVERIAS HOGAR",
     images: [
       {
-        url: "/path-to-your-image.jpg", // Replace with the actual path to your image
+        url: "", // Replace with the actual path to your image
         width: 1200,
         height: 630,
         alt: "AVERIAS HOGAR - Fontanero Madrid - Servicios de reparación y averías",
@@ -30,7 +30,6 @@ export const metadata: Metadata = {
     title: "AVERIAS HOGAR - Fontanero en Madrid",
     description:
       "Expertos en averías y reparaciones del hogar. Fontanería, calefacción y pintura interior en la Comunidad de Madrid. Llame al 123456789.",
-    images: ["/path-to-your-image.jpg"], // Replace with the actual path to your image
   },
 };
 
