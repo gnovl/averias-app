@@ -1,24 +1,64 @@
-import Image from 'next/image';
-
+"use client";
+import NavigationBar from "@/components/navigation";
+import PastProjects from "@/components/pastProjects";
+import Contact from "@/components/contactUs";
+import MainContent from "@/components/mainContent";
+import Footer from "@/components/Footer";
+import ScrollToTop from "react-scroll-to-top";
+import { ConsentBanner, ConsentProvider } from "react-hook-consent";
+import "react-hook-consent/dist/styles/style.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-gray-900 text-white py-12 px-6 rounded-sm shadow-lg text-center min-h-screen">
-      <div className="flex justify-center items-center mb-6">
-        <Image
-          src="/plumber.jpg" // Replace with your under construction image path
-          alt="Under Construction"
-          width={600}
-          height={200}
-          priority
-          className="rounded-md"
-          style={{ objectFit: "contain", height: "auto" }}
+    <ConsentProvider
+      options={{
+        services: [
+          {
+            id: "google-recaptcha",
+            name: "Google reCAPTCHA",
+            cookies: [{ pattern: /^__Secure-.*/ }],
+            mandatory: true,
+          },
+        ],
+        theme: "light",
+      }}
+    >
+      <div>
+        <NavigationBar />
+        <section id="home">
+          <MainContent />
+        </section>
+        <section id="pastprojects">
+          <PastProjects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+        <section>
+          <Footer />
+        </section>
+        <ScrollToTop
+          smooth
+          color="#6f00ff"
+          className="fixed bottom-4 flex justify-center items-center text-white rounded-full p-2"
         />
+        <ConsentBanner
+          settings={{
+            hidden: false,
+            label: "Más información",
+            modal: { title: "Servicios y cookies" },
+          }}
+          decline={{ hidden: false, label: "No" }}
+          approve={{ label: "Aceptar" }}
+        >
+          <>
+            Utilizamos algunos servicios y cookies según nuestra{" "}
+            <Link href="/privacy">Política de privacidad</Link> para ofrecerle
+            una experiencia de usuario óptima en nuestro sitio web.
+          </>
+        </ConsentBanner>
       </div>
-      <h2 className="text-2xl font-semibold mb-4">AVERIAS HOGAR | PRÓXIMAMENTE</h2>
-      <p className="text-lg">
-      ¡Actualmente estamos trabajando en algo increíble. ¡Mantente al tanto para el lanzamiento!
-      </p>
-    </div>
+    </ConsentProvider>
   );
 }

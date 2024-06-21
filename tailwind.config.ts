@@ -13,8 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        customNav: "#000000",
+        customBGNav: "#f9f9f9",
+        customBGHover: "#ececec",
+        customInactiveColor: "#B4B4B4",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;
