@@ -21,6 +21,8 @@ export default async function BlogPostList() {
                   <img
                     src={`/${post.image}`}
                     alt={post.title}
+                    width={500} // Adjust this value as needed
+                    height={300} // Adjust this value as needed
                     className="w-full h-full object-cover"
                   />
                 </div>
