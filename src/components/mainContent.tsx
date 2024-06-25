@@ -1,9 +1,10 @@
 "use client";
 
-import image1 from "/public/img_1.jpg";
-import image2 from "/public/img_2.jpg";
-import image3 from "/public/img_3.jpg";
-import image4 from "/public/img_4.jpg";
+import Image from "next/image";
+import image1 from "/public/img_3.jpg";
+import image2 from "/public/img_4.jpg";
+import image3 from "/public/img_1.jpg";
+import image4 from "/public/img_2.jpg";
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -17,17 +18,22 @@ const usePreloadImages = (images: StaticImageData[]) => {
   useEffect(() => {
     let isMounted = true;
     const preloadImages = async () => {
-      const promises = images.map((img) => {
-        return new Promise((resolve, reject) => {
-          const imgObj = new Image();
-          imgObj.src = img.src;
-          imgObj.onload = resolve;
-          imgObj.onerror = reject;
-        });
-      });
+      const promises = images.map(
+        (img) =>
+          new Promise<void>((resolve, reject) => {
+            const imgObj = new window.Image();
+            imgObj.src = img.src;
+            imgObj.onload = () => resolve();
+            imgObj.onerror = reject;
+          })
+      );
 
-      await Promise.all(promises);
-      if (isMounted) setImagesLoaded(true);
+      try {
+        await Promise.all(promises);
+        if (isMounted) setImagesLoaded(true);
+      } catch (error) {
+        console.error("Failed to preload images", error);
+      }
     };
 
     preloadImages();
@@ -72,30 +78,47 @@ const EmblaCarouselComponent = () => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          <img
-            className="embla__slide"
-            src={image1.src}
-            alt="Slide 1"
-            onLoad={handleImageLoad}
-          />
-          <img
-            className="embla__slide"
-            src={image2.src}
-            alt="Slide 2"
-            onLoad={handleImageLoad}
-          />
-          <img
-            className="embla__slide"
-            src={image3.src}
-            alt="Slide 3"
-            onLoad={handleImageLoad}
-          />
-          <img
-            className="embla__slide"
-            src={image4.src}
-            alt="Slide 4"
-            onLoad={handleImageLoad}
-          />
+          <div className="embla__slide">
+            <Image
+              className="embla__slide"
+              src={image1}
+              alt="Slide 1"
+              width={1600}
+              height={900}
+              onLoad={handleImageLoad}
+              priority
+            />
+          </div>
+          <div className="embla__slide">
+            <Image
+              className="embla__slide"
+              src={image2}
+              alt="Slide 2"
+              width={1600}
+              height={900}
+              onLoad={handleImageLoad}
+            />
+          </div>
+          <div className="embla__slide">
+            <Image
+              className="embla__slide"
+              src={image3}
+              alt="Slide 3"
+              width={1600}
+              height={900}
+              onLoad={handleImageLoad}
+            />
+          </div>
+          <div className="embla__slide">
+            <Image
+              className="embla__slide"
+              src={image4}
+              alt="Slide 4"
+              width={1600}
+              height={900}
+              onLoad={handleImageLoad}
+            />
+          </div>
         </div>
       </div>
       <button className="embla__prev" onClick={scrollPrev}>

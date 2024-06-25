@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Service {
   image: string;
@@ -35,9 +36,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, service }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mt-3 text-center">
-          <img
+          <Image
             src={service.image}
             alt={service.title}
+            width={400}
+            height={600}
             className="w-32 h-32 object-cover mx-auto rounded-full mb-4"
           />
           <h3 className="text-lg leading-6 font-medium text-gray-900">

@@ -15,12 +15,12 @@ const Contact: React.FC = () => {
           Póngase en contacto con nosotros fácilmente a través de WhatsApp:
         </p>
         <p className="text-base text-gray-700 font-light leading-relaxed mb-2">
-          <strong>En ordenador:</strong> Pulse "Abrir WhatsApp" para usar la
-          versión web o escanee el código QR con su teléfono.
+          <strong>En ordenador:</strong> Pulse &ldquo;Abrir WhatsApp&rdquo; para
+          usar la versión web o escanee el código QR con su teléfono.
         </p>
         <p className="text-base text-gray-700 font-light leading-relaxed">
-          <strong>En móvil:</strong> Pulse "Generar código QR" y luego "Abrir
-          WhatsApp" para enviar su mensaje.
+          <strong>En móvil:</strong> Pulse &ldquo;Generar código QR&rdquo; y
+          luego &ldquo;Abrir WhatsApp&rdquo; para enviar su mensaje.
         </p>
         <ContactForm />
       </div>

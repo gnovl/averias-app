@@ -111,6 +111,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-customBGNav p-4 sticky top-0 z-10">
       <div className="container mx-auto flex justify-center lg:justify-center">
+        {/* Logo for larger screens */}
+        <div className="hidden lg:block lg:absolute lg:left-4">
+          <img src="/Logo-1.png" alt="Logo" className="h-8" />
+        </div>
         {/* Hamburger Icon */}
         <div className="lg:hidden">
           <div className={`text-black ${isOpen ? "absolute right-4" : ""}`}>
@@ -174,7 +178,7 @@ const Navbar: React.FC = () => {
             </li>
           </div>
           <div className="mt-4 lg:mt-0">
-            <li>
+            {/* <li>
               <Link
                 href="/blog"
                 className={`${inactiveStyle} mr-4 cursor-pointer`}
@@ -184,7 +188,7 @@ const Navbar: React.FC = () => {
                   Blog
                 </span>
               </Link>
-            </li>
+            </li> */}
           </div>
         </ul>
       </div>

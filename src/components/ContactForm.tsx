@@ -13,7 +13,7 @@ const ContactForm: React.FC = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const qrCodeContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const yourWhatsappNumber = "34689680473"; // Replace with your Spanish WhatsApp number
+  const yourWhatsappNumber = "34123123123"; // Replace with your Spanish WhatsApp number
   const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const handleSubmit = async (e: React.FormEvent) => {

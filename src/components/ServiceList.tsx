@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./ServiceModal";
+import Image from "next/image";
 
 interface Service {
   image: string;
@@ -113,9 +114,11 @@ const ServiceList = () => {
             >
               <div className="flex-shrink-0 mr-3 sm:mr-4">
                 <div className="w-16 h-16 sm:w-12 sm:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden bg-gray-200">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
+                    width={400}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                 </div>

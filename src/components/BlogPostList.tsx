@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/posts";
 import { PostMeta } from "@/lib/types";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function BlogPostList() {
   const posts = await getAllPosts();
@@ -18,11 +19,11 @@ export default async function BlogPostList() {
               </div>
               {post.image && (
                 <div className="ml-4 w-16 h-16 flex-shrink-0 overflow-hidden rounded-xl">
-                  <img
+                  <Image
                     src={`/${post.image}`}
                     alt={post.title}
-                    width={500} // Adjust this value as needed
-                    height={300} // Adjust this value as needed
+                    width={400}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -5,18 +5,24 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AVERÍAS HORAS",
+  title: "AVERÍAS HOGAR",
   description:
     "Fontaneros en Madrid especializados en averías, reparaciones y mantenimiento del hogar. Servicios de fontanería, calefacción y pintura interior. Llame al 123456789.",
+  metadataBase: new URL("https://averiashogar.es"),
+  icons: {
+    icon: ["/favicon.ico?v=4"],
+    apple: ["/apple-touch-icon.png?v=4"],
+    shortcut: ["/apple-touch-icon.png"],
+  },
   openGraph: {
     title: "AVERIAS HOGAR - Fontanero en Madrid",
     description:
-      "Expertos en averías y reparaciones del hogar. Fontanería, calefacción y pintura interior en la Comunidad de Madrid. Llame al 123456789.",
+      "Expertos en averías y reparaciones del hogar. Fontanería, calefacción y pintura interior en la Comunidad de Madrid. Llame al 689 680 473.",
     url: "https://averiashogar.es",
     siteName: "AVERIAS HOGAR",
     images: [
       {
-        url: "/path-to-your-image.jpg", // Replace with the actual path to your image
+        url: "/Logo-1.png", // Replace with the actual path to your image
         width: 1200,
         height: 630,
         alt: "AVERIAS HOGAR - Fontanero Madrid - Servicios de reparación y averías",
@@ -29,8 +35,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AVERIAS HOGAR - Fontanero en Madrid",
     description:
-      "Expertos en averías y reparaciones del hogar. Fontanería, calefacción y pintura interior en la Comunidad de Madrid. Llame al 123456789.",
-    images: ["/path-to-your-image.jpg"], // Replace with the actual path to your image
+      "Expertos en averías y reparaciones del hogar. Fontanería, calefacción y pintura interior en la Comunidad de Madrid. Llame al 689 680 473.",
+    images: ["/Logo-1.png"], // Replace with the actual path to your image
   },
 };
 
