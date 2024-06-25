@@ -13,7 +13,7 @@ const ContactForm: React.FC = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const qrCodeContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const yourWhatsappNumber = "34123123123"; // Replace with your Spanish WhatsApp number
+  const yourWhatsappNumber = "34689680473";
   const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -222,12 +222,12 @@ ${message}`;
               ¡Muy bien! Escanea este código QR con la cámara de tu teléfono.
             </p>
             <p className="text-base text-gray-700 font-light leading-relaxed mb-2">
-              <strong>En ordenador:</strong> Pulse "Abrir WhatsApp" para usar la
-              versión web o escanee el código QR con su teléfono.
+              <strong>En ordenador:</strong> Pulse &quot;Abrir WhatsApp&quot;
+              para usar la versión web o escanee el código QR con su teléfono.
             </p>
             <p className="text-base text-gray-700 font-light leading-relaxed mb-2">
-              <strong>En móvil:</strong> Pulse "Abrir WhatsApp" para enviar su
-              mensaje.
+              <strong>En móvil:</strong> Pulse &quot;Abrir WhatsApp&quot; para
+              enviar su mensaje.
             </p>
             <div className="flex flex-col items-center mb-8">
               <QRCode

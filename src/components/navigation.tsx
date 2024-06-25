@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import Hamburger from "hamburger-react"; // Import the Hamburger component
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string | null>("home");
@@ -64,7 +65,7 @@ const Navbar: React.FC = () => {
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   const getOffset = (sectionId: string) => {
     // Check if window is defined (to prevent SSR errors)
@@ -113,7 +114,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex justify-center lg:justify-center">
         {/* Logo for larger screens */}
         <div className="hidden lg:block lg:absolute lg:left-4">
-          <img src="/Logo-1.png" alt="Logo" className="h-8" />
+          <Image src="/Logo-1.png" alt="Logo" className="h-8" />
         </div>
         {/* Hamburger Icon */}
         <div className="lg:hidden">
