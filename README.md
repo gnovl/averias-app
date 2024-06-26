@@ -73,7 +73,8 @@ To run the project locally:
 
    > NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key
    > RECAPTCHA_SECRET_KEY=your_secret_key
-   > Obtain these keys from the Google reCAPTCHA console for a localhost site.
+
+Obtain these keys from the Google reCAPTCHA console for a localhost site.
 
 4. Run the development server: `npm run dev`
 
