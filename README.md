@@ -72,6 +72,7 @@ To run the project locally:
 3. Create a `.env.local` file in the root directory with the following variables:
 
    > NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key
+   >
    > RECAPTCHA_SECRET_KEY=your_secret_key
 
 Obtain these keys from the Google reCAPTCHA console for a localhost site.
@@ -157,6 +158,7 @@ Para ejecutar el proyecto localmente:
 2. Instalar dependencias: `npm install`
 3. Crear un archivo `.env.local` en el directorio raíz con las siguientes variables:
    > NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_clave_del_sitio
+   >
    > RECAPTCHA_SECRET_KEY=tu_clave_secreta
 
 Obtén estas claves de la consola de Google reCAPTCHA para un sitio localhost. 4. Ejecutar el servidor de desarrollo: `npm run dev`
