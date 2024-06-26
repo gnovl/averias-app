@@ -25,11 +25,18 @@ AVERIAS HOGAR is a professional website offering plumbing services and maintenan
   - embla-carousel
 - Google reCAPTCHA
 
-### Key Features
+### Application Overview and Key Features
 
-- Comprehensive service listings
-- Gallery showcasing completed projects
-- Contact form with QR code generation for WhatsApp (mobile and desktop)
+<div align="center">
+  <img src="./screenshots/app_overview.png" alt="AVERIAS HOGAR Web Application" width="800"/>
+</div>
+
+AVERIAS HOGAR offers the following key features:
+
+- Comprehensive listing of professional plumbing and home repair services
+- Image gallery showcasing completed projects
+- Contact form with WhatsApp QR code generation (mobile and desktop compatible)
+- Responsive design for optimal experience on both mobile and desktop devices
 
 ### Technical Highlights
 
@@ -78,14 +85,6 @@ For more information, visit my [portfolio](https://gnovl.github.io/portfolio/).
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-### Screenshots
-
-![WebApplication](./screenshots/averiashogar_full.png)
-![Homepage](./screenshots/homepage.png)
-![Services](./screenshots/services.png)
-![Contact Form](./screenshots/contact-form.png)
-![Contact Form](./screenshots/contact-form-2.png)
-
 ---
 
 ## Español
@@ -111,11 +110,18 @@ AVERIAS HOGAR es un sitio web profesional que ofrece servicios de fontanería y 
 - embla-carousel
 - Google reCAPTCHA
 
-### Características Principales
+### Visión General de la Aplicación y Características Principales
 
-- Listado completo de servicios
-- Galería de imágenes de trabajos realizados
-- Formulario de contacto con generación de código QR para WhatsApp (móvil y ordenador)
+<div align="center">
+  <img src="./screenshots/app_overview.png" alt="Aplicación Web AVERIAS HOGAR" width="800"/>
+</div>
+
+Características clave visibles:
+
+- Listado profesional de servicios
+- Galería de imágenes de proyectos completados
+- Formulario de contacto con integración de WhatsApp
+- Diseño responsivo para móvil y escritorio
 
 ### Aspectos Técnicos Destacados
 
@@ -161,11 +167,3 @@ Para más información, visita mi [portafolio](https://gnovl.github.io/portfolio
 ### Licencia
 
 Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
-
-### Capturas de Pantalla
-
-![WebApplication](./screenshots/averiashogar_full.png)
-![Homepage](./screenshots/homepage.png)
-![Services](./screenshots/services.png)
-![Contact Form](./screenshots/contact-form.png)
-![Contact Form](./screenshots/contact-form-2.png)
