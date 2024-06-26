@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
 export async function POST(request: NextRequest) {
+  console.log("Environment variables:", process.env);
+  console.log("RECAPTCHA_SECRET_KEY:", process.env.RECAPTCHA_SECRET_KEY);
   try {
     const { name, email, phone, message, recaptchaToken } =
       await request.json();

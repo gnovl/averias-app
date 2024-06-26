@@ -114,7 +114,13 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex justify-center lg:justify-center">
         {/* Logo for larger screens */}
         <div className="hidden lg:block lg:absolute lg:left-4">
-          <Image src="/Logo-1.png" alt="Logo" className="h-8" />
+          <Image
+            src="/Logo-1.png"
+            alt="Logo"
+            width={200}
+            height={300}
+            className="h-8"
+          />
         </div>
         {/* Hamburger Icon */}
         <div className="lg:hidden">
