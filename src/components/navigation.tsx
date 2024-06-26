@@ -113,13 +113,14 @@ const Navbar: React.FC = () => {
     <nav className="bg-customBGNav p-4 sticky top-0 z-10">
       <div className="container mx-auto flex justify-center lg:justify-center">
         {/* Logo for larger screens */}
-        <div className="hidden lg:block lg:absolute lg:left-4">
+        <div className="hidden lg:block lg:absolute lg:left-4 md:w-32">
           <Image
             src="/Logo-1.png"
             alt="Logo"
             width={200}
-            height={300}
-            className="h-8"
+            height={400}
+            priority
+            className="w-full h-full object-contain"
           />
         </div>
         {/* Hamburger Icon */}
