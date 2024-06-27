@@ -165,7 +165,9 @@ Para ejecutar el proyecto localmente:
    >
    > RECAPTCHA_SECRET_KEY=tu_clave_secreta
 
-Obtén estas claves de la consola de Google reCAPTCHA para un sitio localhost. 4. Ejecutar el servidor de desarrollo: `npm run dev`
+Obtén estas claves de la consola de Google reCAPTCHA para un sitio localhost.
+
+4. Ejecutar el servidor de desarrollo: `npm run dev`
 
 ### Contacto
 
