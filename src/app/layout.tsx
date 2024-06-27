@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "AVERIAS HOGAR",
     images: [
       {
-        url: "/Logo-1.png", // Replace with the actual path to your image
+        url: "/Logo-mini.png", // Replace with the actual path to your image
         width: 1200,
         height: 630,
         alt: "AVERIAS HOGAR - Fontanero Madrid - Servicios de reparación y averías",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "AVERIAS HOGAR - Fontanero en Madrid",
     description:
       "Expertos en averías y reparaciones del hogar. Fontanería, calefacción y pintura interior en la Comunidad de Madrid. Llame al 689 680 473.",
-    images: ["/Logo-2.png"], // Replace with the actual path to your image
+    images: ["/Logo-mini.png"], // Replace with the actual path to your image
   },
 };
 
