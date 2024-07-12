@@ -81,6 +81,17 @@ Obtain these keys from the Google reCAPTCHA console for a localhost site.
 
 4. Run the development server: `npm run dev`
 
+5. **Open the application:**
+   Navigate to `http://localhost:3000` in your web browser to view the running application.
+
+## Troubleshooting
+
+If you encounter any issues:
+
+- Ensure you have Node.js and npm installed on your system.
+- If you face any dependency-related errors, try deleting the `node_modules` folder and `package-lock.json` file, then run `npm install` again.
+- Make sure all environment variables are correctly set in the `.env.local` file.
+
 ### Contact
 
 For more information, visit my [portfolio](https://gnovl.github.io/portfolio/).
@@ -168,6 +179,17 @@ Para ejecutar el proyecto localmente:
 Obtén estas claves de la consola de Google reCAPTCHA para un sitio localhost.
 
 4. Ejecutar el servidor de desarrollo: `npm run dev`
+
+5. **Abrir la aplicación:**
+   Navega a `http://localhost:3000` en tu navegador web para ver la aplicación en ejecución.
+
+## Solución de Problemas
+
+Si encuentras algún problema:
+
+- Asegúrate de tener Node.js y npm instalados en tu sistema.
+- Si enfrentas errores relacionados con dependencias, intenta eliminar la carpeta `node_modules` y el archivo `package-lock.json`, luego ejecuta `npm install` nuevamente.
+- Asegúrate de que todas las variables de entorno estén correctamente configuradas en el archivo `.env.local`.
 
 ### Contacto
 
