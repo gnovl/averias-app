@@ -8,6 +8,7 @@ import ScrollToTop from "react-scroll-to-top";
 import { ConsentBanner, ConsentProvider } from "react-hook-consent";
 import "react-hook-consent/dist/styles/style.css";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -59,6 +60,45 @@ export default function Home() {
           </>
         </ConsentBanner>
       </div>
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "AVERIAS HOGAR",
+            description:
+              "Fontanero en Madrid especializado en averías, reparaciones y mantenimiento del hogar. Servicios de fontanería, calefacción y pintura interior.",
+            url: "https://averiashogar.es",
+            telephone: "123123123",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Madrid",
+              addressRegion: "Madrid",
+              addressCountry: "ES",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 40.4168, // Replace with actual coordinates
+              longitude: -3.7038, // Replace with actual coordinates
+            },
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+              ],
+              opens: "00:00",
+              closes: "23:59",
+            },
+          }),
+        }}
+      />
     </ConsentProvider>
   );
 }
