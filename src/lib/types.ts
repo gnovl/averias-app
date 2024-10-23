@@ -1,13 +1,14 @@
-import { Key } from "react";
-
-export type PostMeta = {
-  image: any;
-  slug: Key | null | undefined;
+export interface PostMeta {
   title: string;
   date: string;
-};
+  description: string;
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+}
 
-export type Post = PostMeta & {
+export interface Post {
   slug: string;
+  meta: PostMeta;
   content: string;
-};
+}
