@@ -186,7 +186,7 @@ const Navbar: React.FC = () => {
             </li>
           </div>
           <div className="mt-4 lg:mt-0">
-            {/* <li>
+            <li>
               <Link
                 href="/blog"
                 className={`${inactiveStyle} mr-4 cursor-pointer`}
@@ -196,7 +196,7 @@ const Navbar: React.FC = () => {
                   Blog
                 </span>
               </Link>
-            </li> */}
+            </li>
           </div>
         </ul>
       </div>

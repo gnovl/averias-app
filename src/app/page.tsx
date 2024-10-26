@@ -71,7 +71,7 @@ export default function Home() {
             description:
               "Fontanero en Madrid especializado en averías, reparaciones y mantenimiento del hogar. Servicios de fontanería, calefacción y pintura interior.",
             url: "https://averiashogar.es",
-            telephone: "123123123",
+            telephone: "689680473",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Madrid",
