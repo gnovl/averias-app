@@ -15,15 +15,18 @@ export async function GET(request: Request) {
     const fields: ISitemapField[] = files
       .filter((filename) => filename.endsWith(".mdx"))
       .map((filename) => ({
-        loc: `${process.env.SITE_URL}/blog/${filename.replace(".mdx", "")}`,
+        loc: `${process.env.NEXT_WEBSITE_URL}/blog/${filename.replace(
+          ".mdx",
+          ""
+        )}`,
         lastmod: new Date().toISOString(),
         changefreq: "daily" as const, // This fixes the TypeScript error
         priority: 0.7,
       }));
 
-    // Add the main blog page
+    // Add the main blog page to the sitemap
     fields.push({
-      loc: `${process.env.SITE_URL}/blog`,
+      loc: `${process.env.NEXT_WEBSITE_URL}/blog`,
       lastmod: new Date().toISOString(),
       changefreq: "daily" as const, // This fixes the TypeScript error
       priority: 0.8,

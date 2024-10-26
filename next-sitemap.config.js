@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://averiashogar.es",
+  siteUrl: process.env.NEXT_WEBSITE_URL || "https://averiashogar.es",
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: "daily",
@@ -14,6 +14,6 @@ module.exports = {
         allow: "/",
       },
     ],
-    additionalSitemaps: ["https://averiashogar.es/server-sitemap.xml"],
+    additionalSitemaps: [`${process.env.NEXT_WEBSITE_URL}/server-sitemap.xml`],
   },
 };
