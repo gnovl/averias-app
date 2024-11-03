@@ -247,7 +247,7 @@ const MainContent: React.FC = () => {
           )}
         </SkeletonTheme>
         <p className="text-2xl text-black font-bold leading-relaxed mt-4 md:mt-4">
-          Nuestros servicios ✨
+          Nuestros servicios ✅
         </p>
         <ServiceList />
       </div>

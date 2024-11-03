@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-customBGNav p-4 sticky top-0 z-10">
-      <div className="container mx-auto flex justify-center lg:justify-center">
+      <div className="container mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between relative">
         {/* Logo for larger screens */}
         <div className="hidden lg:block lg:absolute lg:left-4 md:w-32">
           <Image
@@ -123,82 +123,75 @@ const Navbar: React.FC = () => {
             className="w-full h-full object-contain"
           />
         </div>
+
         {/* Hamburger Icon */}
-        <div className="lg:hidden">
-          <div className={`text-black ${isOpen ? "absolute right-4" : ""}`}>
+        <div className="lg:hidden self-end">
+          <div className={`text-black ${isOpen ? "fixed right-4" : ""}`}>
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
-              label="Toggle menu" // Add ARIA label
-              rounded // Make the icon bars rounded
-              hideOutline // Hide the default browser focus style
+              label="Toggle menu"
+              rounded
+              hideOutline
             />
           </div>
         </div>
-        <ul
-          className={`flex flex-col lg:flex-row lg:gap-4 ${
-            isOpen ? "block" : "hidden"
-          } lg:flex`}
-        >
-          <div className="lg:mt-0">
-            <li>
+
+        {/* Navigation Links */}
+        <div className={`lg:mx-auto ${isOpen ? "block" : "hidden"} lg:block`}>
+          <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
+            <li className="mt-4 lg:mt-0">
               <ScrollLink
                 to="home"
                 smooth={true}
                 offset={getOffset("home")}
                 className={`flex items-center ${isActive(
                   "home"
-                )} mr-4 cursor-pointer`}
+                )} cursor-pointer`}
+                onClick={() => setOpen(false)}
               >
                 <FaHome className="mr-2 text-xl" />
                 Inicio
               </ScrollLink>
             </li>
-          </div>
-          <div className="mt-4 lg:mt-0">
-            <li>
+            <li className="mt-4 lg:mt-0">
               <ScrollLink
                 to="pastprojects"
                 smooth={true}
                 offset={getOffset("pastprojects")}
                 className={`flex items-center ${isActive(
                   "pastprojects"
-                )} mr-4 cursor-pointer`}
+                )} cursor-pointer`}
+                onClick={() => setOpen(false)}
               >
                 <FaBriefcase className="mr-2 text-xl" />
                 Proyectos
               </ScrollLink>
             </li>
-          </div>
-          <div className="mt-4 lg:mt-0">
-            <li>
-              <ScrollLink
-                to="contact"
-                smooth={true}
-                offset={getOffset("contact")}
-                className={`flex items-center ${isActive(
-                  "contact"
-                )} mr-4 cursor-pointer`}
-              >
-                <FaEnvelope className="mr-2 text-xl" />
-                Contáctanos
-              </ScrollLink>
-            </li>
-          </div>
-          <div className="mt-4 lg:mt-0">
-            <li>
-              <Link
-                href="/blog"
-                className={`${inactiveStyle} mr-4 cursor-pointer`}
-              >
-                <span className="flex">
+            <li className="mt-4 lg:mt-0">
+              <Link href="/blog" className={`${inactiveStyle} cursor-pointer`}>
+                <span className="flex items-center">
                   <FaBlog className="mr-2 text-xl" />
                   Blog
                 </span>
               </Link>
             </li>
-          </div>
-        </ul>
+          </ul>
+        </div>
+
+        {/* CTA Button */}
+        <div className={`mt-4 lg:mt-0 ${isOpen ? "block" : "hidden"} lg:block`}>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            offset={getOffset("contact")}
+            className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
+            onClick={() => setOpen(false)}
+          >
+            <FaEnvelope className="mr-2 text-xl" />
+            Solicitar presupuesto
+          </ScrollLink>
+        </div>
       </div>
     </nav>
   );

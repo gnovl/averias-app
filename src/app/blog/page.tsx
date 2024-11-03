@@ -2,6 +2,7 @@ import { getAllPosts } from "@/lib/api";
 import BlogCard from "@/components/BlogCard";
 import { Post } from "@/lib/types";
 import BlogNavigation from "@/components/BlogNavigation";
+import Footer from "@/components/Footer";
 
 export default async function BlogIndex() {
   const posts: Post[] = await getAllPosts();
@@ -14,7 +15,7 @@ export default async function BlogIndex() {
         <h1 className="text-4xl font-bold mb-12 text-center text-gray-900">
           Blog
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {posts.map((post, index) => (
             <BlogCard
               key={post.slug}
@@ -24,6 +25,9 @@ export default async function BlogIndex() {
             />
           ))}
         </div>
+      </div>
+      <div className="static">
+        <Footer />
       </div>
     </div>
   );

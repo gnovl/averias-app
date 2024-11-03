@@ -14,22 +14,22 @@ const BlogCard: React.FC<BlogCardProps> = ({
   isPriority = false,
 }) => {
   return (
-    <Link href={`/blog/${slug}`} className="block group">
-      <div className="border rounded-lg overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1">
+    <Link href={`/blog/${slug}`} className="block group h-full">
+      <div className="h-full border rounded-sm overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md bg-white">
         {meta.image && (
-          <div className="relative h-40">
+          <div className="relative h-52 md:h-48 lg:h-44">
             <Image
               src={meta.image}
               alt={meta.title}
               fill
               priority={isPriority}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover w-full h-auto"
+              className="object-cover"
             />
           </div>
         )}
         <div className="p-4">
-          <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+          <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
             {meta.title}
           </h2>
           <p className="text-sm text-gray-600 mb-2">{meta.date}</p>
