@@ -5,36 +5,45 @@ import path from "path";
 
 export async function GET(request: Request) {
   try {
-    // Get the absolute path to your MDX files
-    const postsDirectory = path.join(process.cwd(), "src", "app", "posts"); // Adjust this path to where your MDX files are stored
+    const postsDirectory = path.join(process.cwd(), "src", "app", "posts");
 
-    // Read all MDX files from the directory
+    // Ensure directory exists
+    if (!fs.existsSync(postsDirectory)) {
+      console.error("Posts directory not found:", postsDirectory);
+      return new Response("Posts directory not found", { status: 404 });
+    }
+
     const files = fs.readdirSync(postsDirectory);
+    const baseUrl = process.env.NEXT_WEBSITE_URL || "https://averiashogar.es";
 
-    // Create sitemap entries for each blog post
     const fields: ISitemapField[] = files
       .filter((filename) => filename.endsWith(".mdx"))
       .map((filename) => ({
-        loc: `${process.env.NEXT_WEBSITE_URL}/blog/${filename.replace(
-          ".mdx",
-          ""
-        )}`,
+        loc: `${baseUrl}/blog/${filename.replace(".mdx", "")}`,
         lastmod: new Date().toISOString(),
-        changefreq: "daily" as const, // This fixes the TypeScript error
+        changefreq: "daily",
         priority: 0.7,
       }));
 
-    // Add the main blog page to the sitemap
-    fields.push({
-      loc: `${process.env.NEXT_WEBSITE_URL}/blog`,
-      lastmod: new Date().toISOString(),
-      changefreq: "daily" as const, // This fixes the TypeScript error
-      priority: 0.8,
-    });
+    // Add main pages with higher priority
+    const mainPages: ISitemapField[] = [
+      {
+        loc: `${baseUrl}/blog`,
+        lastmod: new Date().toISOString(),
+        changefreq: "daily",
+        priority: 0.8,
+      },
+      {
+        loc: baseUrl,
+        lastmod: new Date().toISOString(),
+        changefreq: "daily",
+        priority: 1.0,
+      },
+    ];
 
-    return getServerSideSitemap(fields);
+    return getServerSideSitemap([...mainPages, ...fields]);
   } catch (e) {
-    console.log(e);
+    console.error("Error generating sitemap:", e);
     return new Response("Something went wrong", { status: 500 });
   }
 }

@@ -5,15 +5,33 @@ module.exports = {
   sitemapSize: 7000,
   changefreq: "daily",
   priority: 0.7,
-  // Exclude the server-side sitemap from static generation
   exclude: ["/server-sitemap.xml"],
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/api/*", "/_next/*", "/static/*"],
       },
     ],
-    additionalSitemaps: [`${process.env.NEXT_WEBSITE_URL}/server-sitemap.xml`],
+    additionalSitemaps: [
+      `${
+        process.env.NEXT_WEBSITE_URL || "https://averiashogar.es"
+      }/sitemap.xml`,
+      `${
+        process.env.NEXT_WEBSITE_URL || "https://averiashogar.es"
+      }/server-sitemap.xml`,
+    ],
+  },
+  // Generate a sitemap for static pages
+  generateIndexSitemap: true,
+  // Additional URLs to include in the static sitemap
+  additionalPaths: async (config) => {
+    const result = [
+      { loc: "/", changefreq: "daily", priority: 1.0 },
+      { loc: "/blog", changefreq: "daily", priority: 0.8 },
+      // Add other static pages here
+    ];
+    return result;
   },
 };
